@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saiful Alam - Software Developer & Problem Solver</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4F46E5', /* Indigo 600 */
+                        'primary-dark': '#4338CA', /* Indigo 700 */
+                        'background': '#111827', /* Gray 900 */
+                        'card': '#1F2937', /* Gray 800 */
+                        'text-light': '#F9FAFB',
+                        'text-muted': '#9CA3AF',
+                    },
+                }
+            }
+        }
+
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* General dark mode base styling */
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.text-light');
+            font-family: theme('fontFamily.sans');
+        }
+
+        /* Utility for better section separation on mobile */
+        section {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-extrabold text-primary hover:text-text-light transition duration-300">
+                S<span class="text-text-light">A</span>.Dev
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#skills" class="text-text-light hover:text-primary transition duration-300 font-medium">Skills</a>
+                <a href="#projects" class="text-text-light hover:text-primary transition duration-300 font-medium">Projects</a>
+                <a href="#contact" class="text-text-light hover:text-primary transition duration-300 font-medium">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-text-light hover:text-primary focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-gray-700">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-gray-700">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center md:text-left py-20 lg:py-28 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="md:w-3/5">
+                <p class="text-lg text-primary font-semibold uppercase tracking-widest mb-2">Hello, I'm Saiful Alam</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+                    <span class="block">Software Developer</span>
+                    <span class="block text-primary"> & Problem Solver.</span>
+                </h1>
+                <p class="text-xl text-text-muted mb-8 max-w-xl">
+                    I build robust, scalable web applications and thrive on solving complex technical challenges. My focus is on creating elegant, efficient solutions that deliver tangible value.
+                </p>
+                <a href="#projects" class="inline-block bg-primary hover:bg-primary-dark text-text-light font-bold py-3 px-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                    View My Work
+                </a>
+                <a href="#contact" class="inline-block border border-primary text-primary hover:bg-primary hover:text-text-light font-bold py-3 px-8 ml-4 rounded-lg transform transition duration-300 hover:scale-105">
+                    Get In Touch
+                </a>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+                <!-- User's uploaded image (Updated to latest file reference) -->
+                <img src="uploaded:Screenshot 2025-10-04 222844.jpg-aecbe28d-e995-458b-b71b-6d8ae286b0a0" 
+                     alt="Saiful Alam - Professional Profile Photo" 
+                     class="w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-full shadow-2xl border-4 border-primary/50 transform transition duration-500 hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://placehold.co/320x320/1F2937/F9FAFB?text=Profile+Image';"
+                >
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Technical Stack & Expertise</h2>
+            <p class="text-lg text-text-muted mb-12">Tools and skills I use to turn ideas into reality.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Skill Card: Front-End -->
+                <div class="bg-card p-6 rounded-xl shadow-xl hover:shadow-primary/30 transition duration-300 hover:ring-2 ring-primary/50">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Front-End</h3>
+                    <ul class="text-text-muted text-sm space-y-1">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React & Redux</li>
+                        <li>HTML5 / CSS3</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Back-End -->
+                <div class="bg-card p-6 rounded-xl shadow-xl hover:shadow-primary/30 transition duration-300 hover:ring-2 ring-primary/50">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Back-End & DB</h3>
+                    <ul class="text-text-muted text-sm space-y-1">
+                        <li>Node.js & Express</li>
+                        <li>Python</li>
+                        <li>SQL (PostgreSQL)</li>
+                        <li>NoSQL (MongoDB)</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: DevOps & Cloud -->
+                <div class="bg-card p-6 rounded-xl shadow-xl hover:shadow-primary/30 transition duration-300 hover:ring-2 ring-primary/50">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10M19 7v10M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">DevOps & Cloud</h3>
+                    <ul class="text-text-muted text-sm space-y-1">
+                        <li>AWS (S3, EC2)</li>
+                        <li>Docker</li>
+                        <li>Git / GitHub</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Problem Solving -->
+                <div class="bg-card p-6 rounded-xl shadow-xl hover:shadow-primary/30 transition duration-300 hover:ring-2 ring-primary/50">
+                    <svg class="w-8 h-8 text-primary mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8h12a2 2 0 002-2v-4a2 2 0 00-2-2H6a2 2 0 00-2 2v4a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
+                    <ul class="text-text-muted text-sm space-y-1">
+                        <li>Algorithm Design</li>
+                        <li>Data Structures</li>
+                        <li>System Design</li>
+                        <li>Critical Thinking</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="pt-20 lg:pt-28">
+            <h2 class="text-4xl font-bold text-center mb-4">Featured Projects</h2>
+            <p class="text-lg text-text-muted text-center mb-12">Showcasing my commitment to clean code and robust problem-solving.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-card rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-[1.02] border-t-4 border-primary">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Project Fusion</h3>
+                        <p class="text-text-muted mb-4 text-sm">Full-Stack Development</p>
+                        <p class="text-text-light mb-4">A real-time collaborative document editor built with React, Node.js, and WebSockets. Focused on low-latency synchronization and complex state management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Node.js</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">WebSockets</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View on GitHub 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-card rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-[1.02] border-t-4 border-primary">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Data Streamer</h3>
+                        <p class="text-text-muted mb-4 text-sm">Data & Cloud Engineering</p>
+                        <p class="text-text-light mb-4">An automated system for ingesting, processing, and analyzing large datasets using AWS Lambda, S3, and a PostgreSQL database. Solved a scaling bottleneck.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">AWS Lambda</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View on GitHub 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-card rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-[1.02] border-t-4 border-primary">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Algo Visualizer</h3>
+                        <p class="text-text-muted mb-4 text-sm">Problem Solving & Algorithms</p>
+                        <p class="text-text-light mb-4">A dedicated educational tool that visually demonstrates complex graph and sorting algorithms, allowing users to step through the execution logic.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Algorithms</span>
+                            <span class="bg-primary/20 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Canvas API</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
+                            View on GitHub 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+            <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto">
+                Whether you have a complex problem to solve, a job opportunity, or just want to talk about tech, feel free to reach out. I'm always open to new challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <!-- Email Button -->
+                <a href="mailto:your.email@example.com" class="bg-primary hover:bg-primary-dark text-text-light font-bold py-3 px-8 rounded-lg shadow-xl transform transition duration-300 hover:scale-105 flex items-center justify-center min-w-[200px]">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path></svg>
+                    Email Me
+                </a>
+                <!-- LinkedIn Button -->
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="border border-primary text-primary hover:bg-primary hover:text-text-light font-bold py-3 px-8 rounded-lg transform transition duration-300 hover:scale-105 flex items-center justify-center min-w-[200px]">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.529-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted">
+            <p>&copy; 2025 Saiful Alam. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://github.com/yourprofile" target="_blank" class="text-text-muted hover:text-primary transition duration-300">
+                    <!-- GitHub Icon SVG -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.418 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.464-1.11-1.464-.908-.622.067-.608.067-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.949 0-1.092.39-1.983 1.029-2.671-.103-.252-.446-1.266.098-2.636 0 0 .84-.267 2.75 1.025A9.22 9.22 0 0112 6.868c.813.048 1.624.195 2.394.456 1.909-1.292 2.747-1.025 2.747-1.025.546 1.37.202 2.384.098 2.636.64.688 1.029 1.579 1.029 2.671 0 3.848-2.339 4.695-4.566 4.943.359.366.678 1.092.678 2.221 0 1.606-.015 2.898-.015 3.286 0 .267.18.575.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="https://twitter.com/yourhandle" target="_blank" class="text-text-muted hover:text-primary transition duration-300">
+                    <!-- X/Twitter Icon SVG (Modern look) -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.71 6.208L18.244 2.25zM17.16 20.556h2.24L7.498 3.435H5.064l12.096 17.12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Hide menu after clicking a link (for smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
