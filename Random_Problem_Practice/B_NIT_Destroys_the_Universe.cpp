@@ -12,7 +12,7 @@ template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree
 void solve(){
     int n;cin >> n;
     vector<int>v(n);
-    bool flag=false,left=false,right=false;
+    bool flag=false,zero=false;
     for(int &x:v){
         cin >> x;
         if(x!=0) flag=true;
@@ -22,15 +22,24 @@ void solve(){
         cout << 0 << nl;
         return;
     }
-    for(int i=1;i<n-1;i++){
-        if(v[i]==0 && v[i-1]!=0){
-            left=true;
-        }
-        if(v[i]==0 && v[i+1]!=0){
-            right=true;
+    int left=0,right=n-1;
+    while (v[left]==0)
+    {
+        left++;
+    }
+    while (v[right]==0)
+    {
+        right--;
+    }
+    for (int i = left; i <= right; i++)
+    {
+        if(v[i]==0){
+            zero=true;
         }
     }
-    if(left && right){
+    
+    
+    if(zero){
         cout << 2 << nl;
     }
     else{
